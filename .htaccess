@@ -1,0 +1,7 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine on
+    
+    # redirect from www to non www 
+    RewriteCond %{HTTP_HOST} ^www.albert.park.ac [NC]
+    RewriteRule ^(.*)$ http://albert.park.ac/$1 [L,R=301,NC]
+</IfModule>
