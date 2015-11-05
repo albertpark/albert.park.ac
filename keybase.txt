@@ -1,0 +1,73 @@
+==================================================================
+https://keybase.io/albertpark
+--------------------------------------------------------------------
+
+I hereby claim:
+
+  * I am an admin of http://albert.park.ac
+  * I am albertpark (https://keybase.io/albertpark) on keybase.
+  * I have a public key with fingerprint CCC9 BFCD B7F4 4E35 E303  5055 5E34 5DF2 FCAF 82F7
+
+To do so, I am signing this object:
+
+{
+    "body": {
+        "key": {
+            "fingerprint": "ccc9bfcdb7f44e35e30350555e345df2fcaf82f7",
+            "host": "keybase.io",
+            "key_id": "5e345df2fcaf82f7",
+            "kid": "01018b87e81b0def42be2a7590167fe91ff866cfc0a3e2bcdb5277d976e3837ebea20a",
+            "uid": "399d99b928393a08206f70bfb8618c19",
+            "username": "albertpark"
+        },
+        "service": {
+            "hostname": "albert.park.ac",
+            "protocol": "http:"
+        },
+        "type": "web_service_binding",
+        "version": 1
+    },
+    "ctime": 1432243163,
+    "expire_in": 157680000,
+    "prev": "1236cac2fbc4f647f37be645eb1d0116288397a44cbc095e81253c00c651dde2",
+    "seqno": 25,
+    "tag": "signature"
+}
+
+which yields the signature:
+
+-----BEGIN PGP MESSAGE-----
+Version: Keybase OpenPGP v2.0.8
+Comment: https://keybase.io/crypto
+
+yMMyAnicbZJrTBxVFMcBC6RrDWBUSqhRR1djgM28H6uFUiG02RJQURQROvfOHRiB
+ne3sLE9pWmIFG0oWSoUK1WJ2KSFtoWkaIrJR7KJVqFirbSmEPsBSxFhBEmjSGmeI
+fjDxfrn3nvP7/+85Jzf40AMhltAC+u2le311K6Gjw+mekNcKHJM1GFClKsxeg5Wg
+tU1WnEVIc2mKU8fsGIRQADKUACfTNKIYROEUgzOMcaAZSSZlKMo8KXNYIlasuk2F
+YQNEN7IpqhEzLoWKZET/hy9ZS+AETvCA5xBPAFxCMk0CRIocI+AEy8lIIGSZZ1ko
+Q1ykEAmMShiS4ySBYxHFUxwCSCRx0bDzrNlRgiAJAhBInhIoEedJnJU5HMiAZwke
+EoIJupHmFMuQQYulAGm6S9RKsNpEzIiXKxCZQzB7+Q9jMyGbCA29S1N1FaqlRq5Y
+1112U6pXuUy2AoHCf1wKgeKUjFEagnKkuRXVidkJg4S6YtoSNEWSNEWwVCKGKl2K
+hgoVk2A4lseNZT6Dyg1LgqRYKEJSBpCWWZqTKQ4glmYQICScIFiSNzrlRJqGAOIC
+Y4yRZCiI45BlCElCJGb2tcupYnaSMeoUiwxPt1LkFHWPhrDar4bz14WEWkIiwsPM
+3xBiWR/97x+Jm4/6iwvse4HKDfT65kHkytVnPo8fCtuTPCa2n1q+8M6R7No37ued
+GXzE3yS4O8Rfc2at+QkFHX1RoifW30ccPjp1DJ/cLmQXl2WhL/s//Wz6Qyy1Mdl9
+eJLOqJ13vF8fvndmomDqWnjOon/HXJ6aMDBdsfAjLGm415t/ceXJLO/4wu+HNvUs
+NVPdI9+3L2/wBTOfH/BuiDx6NenpMzU9W7Zd4ezq8ebyj+ocVbkpXTmhxTpr3Rkn
+RQ4x1062xd2Qwm6istSkG+fDl6LueF9uaPcN7h7ZcVDp+/rKycsHW88dd462t2vf
+tUSknXqpm5uuTrg/rGy9bVPxbcv66ZadnbvmxpgD0t71We+lZttaPqmaKLzVsy+m
+LtYyEpQXGzOq7bbMmrurgZ/S5Uqr/8XHAqA1qeeQbyZtciRwM8Xjnkl5rv/irNWW
+cmt/v9d1m9b0KW96VJP0Z8W3aZuXeel8tePjV74Z2z061PLodbJ1IVCdOhIBNl5I
+iH9CnM1bp/itAz/suTsU8/h4lmWjN+dEcxB79tzWOeAJehrci9nB6DfPDse0vXV2
+0xd3Jlwf9A6mdXeduCT7vKuvzlzfHsxYfn1LMuyq/yVHrGlIdP1R51SjM+PaNl8a
+L/NLTR0p9bFNlT/7Mn4LLe3MvTwp2J5aTa4YjM+MPOZ4d3/GwyuWBzsHGntPH+n9
+G+JMsc8=
+=wS9/
+-----END PGP MESSAGE-----
+
+And finally, I am proving ownership of this host by posting or
+appending to this document.
+
+View my publicly-auditable identity here: https://keybase.io/albertpark
+
+==================================================================
