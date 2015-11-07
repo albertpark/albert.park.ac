@@ -15,10 +15,6 @@ php:
 before_install:
   - pip install --user codecov
 
-# Appended for Codecov.io
-after_success:
-  - codecov
-
 install: true
 
 # Commands to be run before your environment runs.
@@ -40,5 +36,9 @@ matrix:
 
 # Customize when the notification emails are sent.
 notifications:
-    on_success: never
-    on_failure: always
+  on_success: never
+  on_failure: always
+
+# Appended for Codecov.io
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
