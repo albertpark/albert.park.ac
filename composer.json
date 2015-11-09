@@ -2,7 +2,7 @@
     "name": "albertpark/albert.park.ac",
     "homepage": "https://github.com/albertpark/albert.park.ac",
     "description": "Contents of the website for albert.park.ac.",
-    "keywords": ["albert.park.ac", "organization", "module"],
+    "keywords": ["albert.park.ac", "albertpark", "module"],
     "license": "MIT",
     "authors": [
         {
