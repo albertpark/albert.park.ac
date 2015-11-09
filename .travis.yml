@@ -15,8 +15,8 @@ php:
 
 # Appended for Codecov.io
 before_install:
-  #- pip install --user codecov
-  - sudo pip install codecov
+  - pip install --user codecov
+  #- sudo pip install codecov #slows down performance
 
 # Commands to be run before your environment runs.
 before_script:
