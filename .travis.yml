@@ -19,11 +19,15 @@ install: true
 
 # Commands to be run before your environment runs.
 before_script:
-  - composer self-update
-  - composer install --prefer-source --no-interaction --dev
+  #- composer self-update
+  #- composer install --prefer-source --no-interaction --dev
+  - travis_retry composer self-update
+  - travis_retry composer install --no-interaction --prefer-source --dev
 
 # Commands you want to run that will verify your build.
-script: phpunit
+script:
+  #- phpunit
+  - phpunit --coverage-clover=coverage.xml
 
 # allow_failures: Allow this build to fail under the specified environments.
 # fast_finish: If your build fails do not continue trying to build, just stop.
@@ -36,7 +40,11 @@ matrix:
 
 # Customize when the notification emails are sent.
 notifications:
-  on_success: never
+  email:
+    recipients:
+      #- albert_park@hotmail.com
+      - albert@park.ac
+  on_success: change
   on_failure: always
 
 # Appended for Codecov.io
