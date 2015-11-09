@@ -1,14 +1,18 @@
 {
     "name": "albertpark/albert.park.ac",
+    "homepage": "https://github.com/albertpark/albert.park.ac",
     "description": "Contents of the website for albert.park.ac.",
-    "keywords": ["organization", "module"],
+    "keywords": ["albert.park.ac", "organization", "module"],
     "license": "MIT",
     "authors": [
         {
-            "name": "Albert Park",
+            "name": "albertpark",
             "email": "albert_park@hotmail.com"
         }
     ],
+    "require": {
+        "php": ">=5.0.0"
+    },
     "require-dev": {
         "phpunit/phpunit": "4.0.*"
     },
