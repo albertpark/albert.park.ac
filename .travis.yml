@@ -3,7 +3,6 @@ language: php
 
 # Versions of PHP you want your project run with
 php:
-  - 5.3
   - 5.4
   - 5.5
   - 5.6
@@ -11,7 +10,17 @@ php:
   - hhvm
   - nightly
 
-#install: true
+# allow_failures: Allow this build to fail under the specified environments.
+# fast_finish: If your build fails do not continue trying to build, just stop.
+matrix:
+  include:
+    - php: 5.4
+      env: dependencies=lowest
+  allow_failures:
+    - php: 7.0
+    - php: nightly
+  fast_finish: true
+
 
 # Appended for Codecov.io
 before_install:
@@ -21,23 +30,17 @@ before_install:
 # Commands to be run before your environment runs.
 before_script:
   - composer self-update
-  - composer install --no-interaction --prefer-source --dev
-  #- travis_retry composer self-update
-  #- travis_retry composer install --no-interaction --prefer-source --dev
+  - if [[ $(phpenv version-name) == '5.6' ]]; then composer require satooshi/php-coveralls:dev-master -n ; fi
+  - if [[ $(phpenv version-name) != '5.6' ]]; then composer install --no-interaction --prefer-source --dev ; fi
 
 # Commands you want to run that will verify your build.
 script:
   #- phpunit
-  - vendor/bin/phpunit --coverage-clover=coverage.xml
+  - if [[ $(phpenv version-name) == '5.6' ]]; then vendor/bin/phpunit --coverage-clover clover.xml ; fi
+  - if [[ $(phpenv version-name) != '5.6' ]]; then phpunit ; fi
 
-# allow_failures: Allow this build to fail under the specified environments.
-# fast_finish: If your build fails do not continue trying to build, just stop.
-matrix:
-  allow_failures:
-    - php: 7.0
-    - php: hhvm
-    - php: nightly
-  fast_finish: true
+after_script:
+  - if [[ $(phpenv version-name) == '5.6' ]]; then php vendor/bin/coveralls -v ; fi
 
 # Customize when the notification emails are sent.
 notifications:
