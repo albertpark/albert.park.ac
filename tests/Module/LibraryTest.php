@@ -1,4 +1,4 @@
-<?
+<?php
 use \Organization\Module\Library;
 
 class LibraryTest extends PHPUnit_Framework_TestCase {
@@ -12,5 +12,3 @@ class LibraryTest extends PHPUnit_Framework_TestCase {
         $this->assertEquals($example->whoAmI(), 'an example');
     }
 }
-
-?>
