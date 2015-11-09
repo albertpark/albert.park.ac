@@ -1,5 +1,4 @@
-<?
-namespace Organization\Module;
+<? namespace Organization\Module;
 
 class Library {
     public function whoAmI() {
