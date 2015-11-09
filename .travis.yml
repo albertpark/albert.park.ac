@@ -6,7 +6,6 @@ php:
   - 5.4
   - 5.5
   - 5.6
-  - 7.0
   - hhvm
   - nightly
 
@@ -17,7 +16,6 @@ matrix:
     - php: 5.4
       env: dependencies=lowest
   allow_failures:
-    - php: 7.0
     - php: nightly
   fast_finish: true
 
@@ -36,11 +34,18 @@ before_script:
 # Commands you want to run that will verify your build.
 script:
   #- phpunit
-  - if [[ $(phpenv version-name) == '5.6' ]]; then vendor/bin/phpunit --coverage-clover clover.xml ; fi
-  - if [[ $(phpenv version-name) != '5.6' ]]; then phpunit ; fi
+  - if [[ $(phpenv version-name) == '5.6' || $(phpenv version-name) == '5.5' ]]; then vendor/bin/phpunit --coverage-clover clover.xml ; fi
+  - if [[ $(phpenv version-name) != '5.6' && $(phpenv version-name) != '5.5' ]]; then phpunit ; fi
 
+# Appended for Coveralls.io
 after_script:
   - if [[ $(phpenv version-name) == '5.6' ]]; then php vendor/bin/coveralls -v ; fi
+
+# Appended for Codecov.io
+after_success:
+  - if [[ $(phpenv version-name) == '5.5' ]]; then bash <(curl -s https://codecov.io/bash) ; fi
+  #- if [[ $TRAVIS_PHP_VERSION != "hhvm" ]]; then codecov; fi
+  #- if [[ $TRAVIS_PHP_VERSION != "hhvm" ]]; then bash <(curl -s https://codecov.io/bash); fi
 
 # Customize when the notification emails are sent.
 notifications:
@@ -51,9 +56,3 @@ notifications:
   on_success: change
   on_failure: always
 
-# Appended for Codecov.io
-after_success:
-  - bash <(curl -s https://codecov.io/bash)
-  #- codecov
-  #- if [[ $TRAVIS_PHP_VERSION != "hhvm" ]]; then codecov; fi
-  #- if [[ $TRAVIS_PHP_VERSION != "hhvm" ]]; then bash <(curl -s https://codecov.io/bash); fi
