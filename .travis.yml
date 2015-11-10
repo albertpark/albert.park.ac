@@ -3,7 +3,6 @@ language: php
 
 # Versions of PHP you want your project run with
 php:
-  - 5.4
   - 5.5
   - 5.6
   - hhvm
@@ -28,22 +27,28 @@ before_install:
 # Commands to be run before your environment runs.
 before_script:
   - composer self-update
-  - if [[ $(phpenv version-name) == '5.6' ]]; then composer require satooshi/php-coveralls:dev-master -n ; fi
-  - if [[ $(phpenv version-name) != '5.6' ]]; then composer install --no-interaction --prefer-source --dev ; fi
+  #- if [[ $(phpenv version-name) == '5.6' ]]; then composer require satooshi/php-coveralls:dev-master -n ; fi
+  - if [[ $TRAVIS_PHP_VERSION == '5.6' ]]; then composer require satooshi/php-coveralls:dev-master -n ; fi
+  #- if [[ $(phpenv version-name) != '5.6' ]]; then composer install --no-interaction --prefer-source --dev ; fi
+  - if [[ $TRAVIS_PHP_VERSION != '5.6' ]]; then composer install --no-interaction --prefer-source --dev ; fi
 
 # Commands you want to run that will verify your build.
 script:
   #- phpunit
-  - if [[ $(phpenv version-name) == '5.6' || $(phpenv version-name) == '5.5' ]]; then vendor/bin/phpunit --coverage-clover clover.xml ; fi
-  - if [[ $(phpenv version-name) != '5.6' && $(phpenv version-name) != '5.5' ]]; then phpunit ; fi
+  #- if [[ $(phpenv version-name) == '5.6' || $(phpenv version-name) == '5.5' ]]; then vendor/bin/phpunit --coverage-clover clover.xml ; fi
+  - if [[ $TRAVIS_PHP_VERSION == '5.6' || $TRAVIS_PHP_VERSION == '5.5' ]]; then vendor/bin/phpunit --coverage-clover clover.xml ; fi
+  #- if [[ $(phpenv version-name) != '5.6' && $(phpenv version-name) != '5.5' ]]; then phpunit ; fi
+  - if [[ $TRAVIS_PHP_VERSION != '5.6' && $TRAVIS_PHP_VERSION != '5.5' ]]; then phpunit ; fi
 
 # Appended for Coveralls.io
 after_script:
-  - if [[ $(phpenv version-name) == '5.6' ]]; then php vendor/bin/coveralls -v ; fi
+  #- if [[ $(phpenv version-name) == '5.6' ]]; then php vendor/bin/coveralls -v ; fi
+  - if [[ $TRAVIS_PHP_VERSION == '5.6' ]]; then php vendor/bin/coveralls -v ; fi
 
 # Appended for Codecov.io
 after_success:
-  - if [[ $(phpenv version-name) == '5.5' ]]; then bash <(curl -s https://codecov.io/bash) ; fi
+  #- if [[ $(phpenv version-name) == '5.5' ]]; then bash <(curl -s https://codecov.io/bash) ; fi
+  - if [[ $TRAVIS_PHP_VERSION == '5.5' ]]; then bash <(curl -s https://codecov.io/bash) ; fi
   #- if [[ $TRAVIS_PHP_VERSION != "hhvm" ]]; then codecov; fi
   #- if [[ $TRAVIS_PHP_VERSION != "hhvm" ]]; then bash <(curl -s https://codecov.io/bash); fi
 
