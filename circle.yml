@@ -8,8 +8,7 @@ machine:
 
 dependencies:
   pre:
-    - pip install --user codecov
-    - composer install --prefer-source --no-interaction
+    - composer require satooshi/php-coveralls:dev-master -n
 
 #database:
 
@@ -17,8 +16,6 @@ test:
   override:
     - vendor/bin/phpunit --coverage-clover=clover.xml
   post:
-    #- cat ./coverage/lcov.info | codecov
-    - codecov
-    #- bash <(curl -s https://codecov.io/bash)
+    - php vendor/bin/coveralls -v
 
 #deployment:
