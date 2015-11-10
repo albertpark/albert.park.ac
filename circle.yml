@@ -8,14 +8,23 @@ machine:
 
 dependencies:
   pre:
-    - composer require satooshi/php-coveralls:dev-master -n
+    #- composer require satooshi/php-coveralls:dev-master -n
+    - sudo composer self-update
+    - sed -i 's/^;//' ~/.phpenv/versions/$(phpenv global)/etc/conf.d/xdebug.ini
 
 #database:
 
 test:
   override:
-    - vendor/bin/phpunit --coverage-clover=clover.xml
+    #- vendor/bin/phpunit --coverage-clover=clover.xml
+    - composer test
   post:
-    - php vendor/bin/coveralls -v
+    #- php vendor/bin/coveralls -v
+    - composer coveralls-save-only
 
 #deployment:
+
+#general:
+ # artifacts:
+  #  - "tmp/coveralls.json"
+   # - "tmp/report.lcov"
