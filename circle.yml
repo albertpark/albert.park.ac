@@ -14,8 +14,9 @@ dependencies:
 
 test:
   override:
-    - ./vendor/bin/phpunit --coverage-clover=clover.xml
+    - vendor/bin/phpunit --coverage-clover=clover.xml
   post:
-    - bash <(curl -s https://codecov.io/bash)
+    #- cat ./coverage/lcov.info | codecov
+    - codecov
 
 #deployment:
