@@ -8,6 +8,7 @@ machine:
 
 dependencies:
   pre:
+    - pip install --user codecov
     - composer install --prefer-source --no-interaction
 
 #database:
@@ -17,6 +18,7 @@ test:
     - vendor/bin/phpunit --coverage-clover=clover.xml
   post:
     #- cat ./coverage/lcov.info | codecov
-    - codecov
+    #- codecov
+    - bash <(curl -s https://codecov.io/bash)
 
 #deployment:
