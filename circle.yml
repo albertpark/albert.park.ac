@@ -1,0 +1,19 @@
+machine:
+  timezone:
+    America/New_York
+  php:
+    version: 5.4.5
+
+#checkout:
+
+dependencies:
+  pre:
+    - composer install --prefer-source --no-interaction
+
+#database:
+
+test:
+  override:
+    - ./vendor/bin/phpunit --coverage-clover=clover.xml
+
+#deployment:
