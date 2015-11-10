@@ -20,5 +20,7 @@ dependencies:
 test:
   override:
     - phpunit -c phpunit.xml.dist
-  
+  post:
+    - php vendor/bin/coveralls -v
+
 #deployment:
