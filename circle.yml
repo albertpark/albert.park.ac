@@ -6,6 +6,7 @@ machine:
 
 #checkout:
 
+# https://github.com/satooshi/php-coveralls#coverage-clover-configuration
 dependencies:
   override:
     - mkdir -p build/logs
