@@ -57,7 +57,8 @@ after_success:
 # Appended for Coveralls.io
 #after_script:
   #- if [[ $TRAVIS_PHP_VERSION == '5.6' ]]; then php vendor/bin/coveralls -v --exclude-no-stmt ; fi
-  - bash <(curl -s https://codecov.io/bash)
+  #- bash <(curl -s https://codecov.io/bash)
+  - bash <(curl -s https://codecov.io/bash) -X coveragepy
 
 # Customize when the notification emails are sent.
 notifications:
