@@ -13,7 +13,7 @@ dependencies:
     - composer require satooshi/php-coveralls:dev-master -n
     - pecl install xdebug
     - cat ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini | sed -e "s/;//" > xdebug.ini
-    - cp xdebug.ini ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
+    - mv xdebug.ini ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
 
 ## Customize test commands
 test:
