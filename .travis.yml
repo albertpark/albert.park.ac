@@ -40,7 +40,7 @@ script:
   - php vendor/bin/phpcs --report=checkstyle --report-file=build/logs/checkstyle.xml --standard=build/config/phpcs.xml --ignore=*.html.php,*.config.php,*.twig.php src
   - php vendor/bin/phpmd src xml build/config/phpmd.xml --reportfile build/logs/pmd.xml
   - cp ~/xdebug.ini ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
-  - vendor/bin/phpunit -c phpunit.xml.dist
+  - php vendor/bin/phpunit -c phpunit.xml.dist
   - rm ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
 
 # Appended for Codecov.io
