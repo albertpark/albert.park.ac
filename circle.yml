@@ -9,6 +9,7 @@ machine:
 ## Customize dependencies
 dependencies:
   override:
+    - curl http://cs.sensiolabs.org/get/php-cs-fixer.phar -o php-cs-fixer.phar
     - mkdir -p build/logs
     - composer require satooshi/php-coveralls:dev-master -n
     - pecl install xdebug
