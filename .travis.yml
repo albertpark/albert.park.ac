@@ -21,9 +21,9 @@ matrix:
 
 
 # Appended for Codecov.io
-before_install:
+#before_install:
   #- sudo pip install codecov #slows down performance
-  - pip install --user codecov
+  #- pip install --user codecov
 
 # Commands to be run before your environment runs.
 before_script:
