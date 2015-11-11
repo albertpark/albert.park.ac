@@ -27,8 +27,8 @@
         "pdepend/pdepend": "dev-master as 2.0.0",
         "phpmd/phpmd": "dev-master",
         "sebastian/phpcpd": "1.4.*@stable",
-        "sebastian/finder-facade": "dev-master",
-        "theseer/fdomdocument": "dev-master",
+        "sebastian/finder-facade": "dev-master as 1.2",
+        "theseer/fdomdocument": "dev-master as 1.6.1",
         "squizlabs/php_codesniffer": "1.4.*@stable",
         "apigen/apigen": "2.8.*@stable"
     },
