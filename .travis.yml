@@ -39,7 +39,7 @@ script:
 
 # Appended for Coveralls.io
 #after_script:
-  #- if [[ $TRAVIS_PHP_VERSION == '5.6' ]]; then php vendor/bin/coveralls -v ; fi
+  #- if [[ $TRAVIS_PHP_VERSION == '5.6' ]]; then php vendor/bin/coveralls -v --exclude-no-stmt ; fi
 
 # Appended for Codecov.io
 after_success:

@@ -1,12 +1,12 @@
+# https://github.com/satooshi/php-coveralls#coverage-clover-configuration
+
 machine:
   timezone:
     America/New_York
   php:
-    version: 5.4.5
+    version: 5.4.10
 
-#checkout:
-
-# https://github.com/satooshi/php-coveralls#coverage-clover-configuration
+## Customize dependencies
 dependencies:
   override:
     - mkdir -p build/logs
@@ -15,11 +15,7 @@ dependencies:
     - cat ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini | sed -e "s/;//" > xdebug.ini
     - cp xdebug.ini ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
 
-#database:
-
-test:
+## Customize test commandstest:
   override:
     - phpunit -c phpunit.xml.dist
     - COVERALLS_REPO_TOKEN=$COVERALLS_REPO_TOKEN php vendor/bin/coveralls -v
-
-#deployment:
