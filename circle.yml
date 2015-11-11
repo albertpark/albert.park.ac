@@ -11,10 +11,9 @@ dependencies:
   override:
     - mkdir -p build/logs
     - composer require satooshi/php-coveralls:dev-master -n
-    #- composer install --dev --no-interaction
-    - pecl install xdebug
-    - cat ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini | sed -e "s/;//" > xdebug.ini
-    - mv xdebug.ini ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
+    #- pecl install xdebug
+    #- cat ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini | sed -e "s/;//" > xdebug.ini
+    #- mv xdebug.ini ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
 
 #database:
 
