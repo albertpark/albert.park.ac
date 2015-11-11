@@ -4,11 +4,13 @@ namespace Organization\Module;
 
 class Library
 {
-    public function whoAmI() {
+    public function whoAmI()
+    {
         return 'an example';
     }
 
-    public function helloWorld() {
+    public function helloWorld()
+    {
         return 'Hello World!';
     }
 }
