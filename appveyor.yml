@@ -2,7 +2,7 @@ build: false
 shallow_clone: true
 platform:
   - x86
-  - x64
+  #- x64 # performance is very slow on appveyor site
 clone_folder: c:\projects\albert.park.ac
 
 cache:
