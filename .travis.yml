@@ -25,6 +25,7 @@ matrix:
     - php: 5.3
       env: dependencies=lowest
   allow_failures:
+    - php: 7.0
     - php: hhvm
     - php: nightly
   fast_finish: true
@@ -53,7 +54,7 @@ script:
   - php ./vendor/bin/phpunit -c phpunit.xml.dist
   - rm ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
 
-  
+
 # Appended for Codecov.io
 after_success:
   - curl -s https://gist.github.com/albertpark/985d39b759f356cdbbeb/raw > travis/ColorCLI.php
@@ -77,4 +78,3 @@ notifications:
       - albert@park.ac
   on_success: change
   on_failure: always
-
