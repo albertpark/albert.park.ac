@@ -25,6 +25,7 @@ matrix:
     - php: 5.3
       env: dependencies=lowest
   allow_failures:
+    - php: 7.0
     - php: hhvm
     - php: nightly
   fast_finish: true
@@ -50,7 +51,6 @@ script:
   - php ./vendor/bin/phpcs --report=checkstyle --report-file=build/logs/checkstyle.xml --standard=build/config/phpcs.xml --ignore=*.html.php,*.config.php,*.twig.php src
   - php ./vendor/bin/phpmd src xml build/config/phpmd.xml --reportfile build/logs/pmd.xml
   - cp ~/xdebug.ini ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
-  #- ls -d tests/Composer/Test/* | parallel --gnu --keep-order 'echo "Running {} tests"; ./vendor/bin/phpunit -c tests/complete.phpunit.xml --colors=always {} || (echo -e "\e[41mFAILED\e[0m {}" && $(exit 1));'
   - php ./vendor/bin/phpunit -c phpunit.xml.dist
   - rm ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
 
