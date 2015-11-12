@@ -7,8 +7,8 @@
 
 ##Repository for a [http://albert.park.ac][albertparkac].
 
-*[https://github.com/albertpark/albert.park.ac][github] (primary)  
-*[https://bitbucket.org/albertpark/albert.park.ac][bitbucket] (mirror)
+* [https://github.com/albertpark/albert.park.ac][github] (primary)  
+* [https://bitbucket.org/albertpark/albert.park.ac][bitbucket] (mirror)
 
 [github]: https://github.com/albertpark/albert.park.ac
 [bitbucket]: https://bitbucket.org/albertpark/albert.park.ac

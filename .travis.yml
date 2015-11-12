@@ -47,11 +47,11 @@ script:
   - mkdir -p build/logs
   #- php -n php-cs-fixer.phar fix -v --dry-run --level=all src
   - output=$(php -n php-cs-fixer.phar fix -v --dry-run --level=all src); if [[ $output ]]; then while read -r line; do echo -e "\e[00;31m$line\e[00m"; done <<< "$output"; false; fi;
-  - php vendor/bin/phpcs --report=checkstyle --report-file=build/logs/checkstyle.xml --standard=build/config/phpcs.xml --ignore=*.html.php,*.config.php,*.twig.php src
-  - php vendor/bin/phpmd src xml build/config/phpmd.xml --reportfile build/logs/pmd.xml
+  - php ./vendor/bin/phpcs --report=checkstyle --report-file=build/logs/checkstyle.xml --standard=build/config/phpcs.xml --ignore=*.html.php,*.config.php,*.twig.php src
+  - php ./vendor/bin/phpmd src xml build/config/phpmd.xml --reportfile build/logs/pmd.xml
   - cp ~/xdebug.ini ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
   #- ls -d tests/Composer/Test/* | parallel --gnu --keep-order 'echo "Running {} tests"; ./vendor/bin/phpunit -c tests/complete.phpunit.xml --colors=always {} || (echo -e "\e[41mFAILED\e[0m {}" && $(exit 1));'
-  - php vendor/bin/phpunit -c phpunit.xml.dist --colors=always
+  - php ./vendor/bin/phpunit -c phpunit.xml.dist
   - rm ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
 
   
@@ -61,9 +61,9 @@ after_success:
   - curl -s https://gist.github.com/albertpark/4551957f2332def300f3/raw > travis/junit.php
   - curl -s https://gist.github.com/albertpark/f68a8e2def7e37ea6bc3/raw > travis/pmd.php
   - curl -s https://gist.github.com/albertpark/ef9ed4553192ecd5ea44/raw > travis/checkstyle.php
-  - php travis/checkstyle.php
-  - php travis/pmd.php
-  - php travis/junit.php
+  - php ./travis/checkstyle.php
+  - php ./travis/pmd.php
+  - php ./travis/junit.php
 
 # Appended for Coveralls.io
 #after_script:
