@@ -51,7 +51,7 @@ script:
   - php vendor/bin/phpmd src xml build/config/phpmd.xml --reportfile build/logs/pmd.xml
   - cp ~/xdebug.ini ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
   #- ls -d tests/Composer/Test/* | parallel --gnu --keep-order 'echo "Running {} tests"; ./vendor/bin/phpunit -c tests/complete.phpunit.xml --colors=always {} || (echo -e "\e[41mFAILED\e[0m {}" && $(exit 1));'
-  - php vendor/bin/phpunit -c phpunit.xml.dist --colors=always {} || (echo -e "\e[41mFAILED\e[0m {}" && $(exit 1))
+  - php vendor/bin/phpunit -c phpunit.xml.dist --colors=always
   - rm ~/.phpenv/versions/$(phpenv version-name)/etc/conf.d/xdebug.ini
 
   
