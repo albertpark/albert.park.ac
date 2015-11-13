@@ -31,9 +31,17 @@ $at_style .= $at_base;
 $at_style .= 'top: -1px;';
 $at_style .= 'position: relative;';
 
+$pre_01_base = 'user-select: none;';
+
 $pre_01_style = '';
 $pre_01_style .= 'color: transparent;';
 $pre_01_style .= 'font-size: 0.1em;';
+$pre_01_style .= '-webkit-touch-callout: none;';
+$pre_01_style .= '-webkit-' . $pre_01_base;
+$pre_01_style .= '-khtml-' . $pre_01_base;
+$pre_01_style .= '-moz-' . $pre_01_base;
+$pre_01_style .= '-ms-' . $pre_01_base;
+$pre_01_style .= $pre_01_base;
 
 ## endof css styles
 
