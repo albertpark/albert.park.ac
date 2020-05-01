@@ -1,5 +1,16 @@
-.hg
-.hgignore
+# composer
 build/logs
 vendor
 composer.lock
+
+# cache folders
+/cache
+# ignore all logs
+log
+logs
+*log
+*.log
+
+robots.txt
+# ignore zip files
+*.zip

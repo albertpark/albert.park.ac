@@ -1,5 +1,8 @@
 <?
 
+require('define.php');
+include_once(__BIBLIOTHECA__ . 'helper.php');
+
 ## css styles
 
 $html_style = '';
@@ -61,7 +64,8 @@ $ap .= '<meta name="viewport" content="width=device-width, initial-scale=1, maxi
 $ap .= '<meta name="apple-mobile-web-app-capable" content="yes">';
 $ap .= '<link rel="image_src" type="image/jpeg" href="/images/logo.png">';
 
-$ap .= '<title>albert.park.ac</title>';
+// $ap .= '<title>' . $_SERVER[SERVER_NAME] . '</title>';
+$ap .= '<title>albert.park</title>';
 $ap .= '</head>';
 
 $ap .= '<body style="%2$s">';
@@ -73,5 +77,7 @@ $ap .= '</body>';
 $ap .= '</html>';
 
 print(sprintf($ap, $html_style, $body_style, $center_style, $pre_00_style, $at_style, $pre_01_style));
+
+#debug($_SERVER);
 
 ?>

@@ -1,7 +1,31 @@
+#ErrorDocument 403 /
+#ErrorDocument 404 /
+#ErrorDocument 500 /
+
 <IfModule mod_rewrite.c>
-    RewriteEngine on
-    
-    # redirect from www to non www 
-    RewriteCond %{HTTP_HOST} ^www.albert.park.ac [NC]
-    RewriteRule ^(.*)$ http://albert.park.ac/$1 [L,R=301,NC]
+  RewriteEngine on
+
+  # force SSL with a temporary redirect [2020-04-08]
+  RewriteCond %{HTTPS} off
+  RewriteRule ^(.*)$ https://%{HTTP_HOST}%{REQUEST_URI} [L,R=302]
+
+  # Redirect from www to non www 
+  RewriteCond %{HTTP_HOST} ^www.albert.park.ac [NC]
+  RewriteRule ^(.*)$ https://albert.park.ac/$1 [L,R=301,NC]
+  # RewriteRule ^(.*)$ https://%{HTTP_HOST}/$1 [L,R=301,NC]
+
+  # https://perishablepress.com/block-favicon-url-404-requests/
+  ## Just place it in the root ㅠ,.ㅠ [2020-04-16]
+  RewriteCond %{REQUEST_URI} favicon.ico [NC]
+  RewriteRule (.*) favicon.ico [R=302,L]
+
+  ## Alias directory for images [2020-04-16]
+  #RewriteRule ^emmalyn/(.*)\.(gif|ico|jpe?g|png)$ emmalyn/$1.$2 [L]
+
+  # Added by a2hosting mods
+  RewriteCond %{HTTP_HOST} !=localhost
+  RewriteCond %{REQUEST_URI} !^/[0-9]+\..+\.cpaneldcv$
+  RewriteCond %{REQUEST_URI} !^/\.well-known/acme-challenge/[0-9a-zA-Z_-]+$
+  RewriteCond %{REQUEST_URI} !^/\.well-known/pki-validation/[A-F0-9]{32}\.txt(?:\ Comodo\ DCV)?$
+  RewriteRule ^(.*)$ https://albert.park.ac/$1 [L,R=302,NC]
 </IfModule>
