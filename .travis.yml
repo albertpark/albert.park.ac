@@ -1,5 +1,8 @@
 # https://github.com/codecov/example-php
 
+
+dist: trusty
+
 # Required to run your project under the correct environment.
 language: php
 
